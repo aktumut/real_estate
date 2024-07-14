@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:real_estate/src/constants/asset_paths.dart';
 
@@ -48,11 +49,11 @@ class IconLibrary {
 }
 
 class ImageLibrary {
-  static SvgPicture launcherIcon = SvgPicture.asset(
+  static Image launcherIcon = Image.asset(
     ImagePaths.launcherIcon,
   );
 
-  static SvgPicture searchStateEmpty = SvgPicture.asset(
+  static Image searchStateEmpty = Image.asset(
     ImagePaths.searchStateEmpty,
   );
 }
