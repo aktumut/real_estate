@@ -1,0 +1,19 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+linter:
+  rules:
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  plugins:
+    - custom_lint
+  errors:
+    public_member_api_docs: ignore
+    invalid_annotation_target: ignore
+    depend_on_referenced_packages: false
+
+custom_lint:
+  rules:
+    missing_provider_scope: false
+    avoid_manual_providers_as_generated_provider_dependency: false
