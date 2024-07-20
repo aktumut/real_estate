@@ -1,13 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
+import 'package:real_estate/src/constants/strings.dart';
 import 'package:real_estate/src/utilities/assets_library.dart';
 import 'package:real_estate/src/widgets_common/custom_circular_progress_indicator.dart';
 
 class HouseCardImage extends StatelessWidget {
-  const HouseCardImage({
-    super.key,
-  });
+  const HouseCardImage({required this.imagePath, super.key});
+
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class HouseCardImage extends StatelessWidget {
       width: Sizes.p76,
       height: double.infinity,
       child: CachedNetworkImage(
-        imageUrl: 'http://via.placeholder.com/350x150',
+        imageUrl: '$tTextBaseUrl$imagePath',
         fit: BoxFit.cover,
         progressIndicatorBuilder: (context, url, downloadProgress) =>
             CustomCircularProgressIndicator(
