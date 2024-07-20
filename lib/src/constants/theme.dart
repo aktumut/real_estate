@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate/src/constants/app_colors.dart';
+import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/constants/strings.dart';
 import 'package:real_estate/src/constants/text_styles.dart';
 
@@ -18,14 +19,12 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       color: AppColors.lightGray,
       elevation: 0,
-      titleTextStyle: TextStyle(
-        color: AppColors.strong,
-        fontSize: 24,
-      ),
+      titleTextStyle: title01,
     ),
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: AppColors.white,
       indicatorColor: Colors.transparent,
+      height: Sizes.p72,
       overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
     ),
     textTheme: TextTheme(
@@ -35,7 +34,7 @@ class AppTheme {
       bodyMedium: body,
       bodySmall: hint,
       displaySmall: subTitle,
-      titleLarge: title01,
+      titleLarge: title03,
       titleSmall: input,
     ),
   );
