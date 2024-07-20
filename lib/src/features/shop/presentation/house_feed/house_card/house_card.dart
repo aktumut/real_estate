@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
+import 'package:real_estate/src/features/shop/domain/house_model.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/widgets/house_card_icon_row.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/widgets/house_card_image.dart';
+import 'package:real_estate/src/utils/format_price.dart';
 
 class HouseCard extends StatelessWidget {
-  const HouseCard({super.key});
+  const HouseCard({required this.house, super.key});
+
+  final House house;
 
   @override
   Widget build(BuildContext context) {
@@ -20,24 +24,24 @@ class HouseCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const HouseCardImage(),
+          HouseCardImage(imagePath: house.image),
           gapW12,
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  r'$45000',
+                  r'$' '${formatPrice(house.price)}',
                   style: context.textTheme.bodyLarge,
                 ),
                 Text(
-                  '1010KH Raamgrach',
+                  house.zip,
                   style: context.textTheme.bodySmall?.copyWith(
                     color: AppColors.medium,
                   ),
                 ),
                 const Spacer(),
-                const HouseCardIconRow(),
+                HouseCardIconRow(house: house),
               ],
             ),
           ),
