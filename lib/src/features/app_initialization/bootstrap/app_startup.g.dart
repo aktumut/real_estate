@@ -6,7 +6,7 @@ part of 'app_startup.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appStartupHash() => r'56acb4efc3f74c7b231a47a4aec1b7357ac3ca51';
+String _$appStartupHash() => r'2f3cf084b6a0840726a822f6f45b85ac24faf3f5';
 
 /// See also [appStartup].
 @ProviderFor(appStartup)
