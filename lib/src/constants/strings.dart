@@ -12,7 +12,7 @@ const String tTextContentType = 'Content-Type';
 const String tTextApplicationJson = 'application/json';
 const String tTextAccessKey = 'Access-Key';
 const String tTextAccessCode = '98bww4ezuzfePCYFxJEWyszbUXc7dxRx';
-const String tTextBaseUrl = 'https://intern.d-tt.nl/api/house';
+const String tTextBaseUrl = 'https://intern.d-tt.nl/api';
 
 /// Fonts
 const String tTextFontFamily = 'GothamSSm';
