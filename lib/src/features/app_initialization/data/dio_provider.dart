@@ -10,7 +10,7 @@ part 'dio_provider.g.dart';
 Dio dio(DioRef ref) {
   return Dio(
     BaseOptions(
-      baseUrl: tTextBaseUrl,
+      baseUrl: tTextBaseUrlApi,
       receiveTimeout: const Duration(seconds: 5),
       connectTimeout: const Duration(seconds: 15),
       sendTimeout: const Duration(seconds: 30),
