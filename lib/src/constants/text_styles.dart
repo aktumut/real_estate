@@ -8,6 +8,7 @@ TextStyle title01 = TextStyle(
   color: AppColors.strong,
   fontSize: 18,
   fontFamily: tTextFontFamilyBold,
+  fontWeight: FontWeight.bold,
 );
 
 TextStyle title02 = TextStyle(
