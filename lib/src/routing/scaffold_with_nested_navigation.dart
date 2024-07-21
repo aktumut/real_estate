@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/constants/page_paths.dart';
 import 'package:real_estate/src/routing/app_router.dart';
-import 'package:real_estate/src/utilities/assets_library.dart';
+import 'package:real_estate/src/utils/assets_library.dart';
 
 class ScaffoldWithNestedNavigation extends ConsumerStatefulWidget {
   const ScaffoldWithNestedNavigation({
