@@ -20,6 +20,8 @@ class AppTheme {
       color: AppColors.lightGray,
       elevation: 0,
       titleTextStyle: title01,
+      surfaceTintColor: AppColors.white,
+      toolbarHeight: Sizes.p96,
     ),
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: AppColors.white,
