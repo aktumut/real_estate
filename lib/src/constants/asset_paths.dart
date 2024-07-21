@@ -19,4 +19,5 @@ class ImagePaths {
 
   static const String launcherIcon = '$_basePath/launcher_icon.png';
   static const String searchStateEmpty = '$_basePath/search_state_empty.png';
+  static const String dTTBanner = '$_basePath/dtt_banner.png';
 }
