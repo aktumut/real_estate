@@ -4,7 +4,9 @@
   "pageNotFound": "Page Not Found",
   "anErrorOccurred": "An Error Occurred. Please try again later.",
   "retry": "Retry",
-  "appBarTitle": "DTT REAL ESTATE"
+  "appBarTitle": "DTT REAL ESTATE",
+  "searchForAHome": "Search for a home",
+  "searchNoResultFound": "No results found!\nPerhaps try anothe search"
 }
 
 
