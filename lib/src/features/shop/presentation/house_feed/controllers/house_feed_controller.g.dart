@@ -7,7 +7,7 @@ part of 'house_feed_controller.dart';
 // **************************************************************************
 
 String _$houseFeedControllerHash() =>
-    r'dee1d6417762bca72d9a66cf9f16de257ea6f4b5';
+    r'6b7129e20b661820ef4a1eacde2dce35b9d07f4d';
 
 /// See also [HouseFeedController].
 @ProviderFor(HouseFeedController)
