@@ -27,3 +27,6 @@ const String tTextError = 'Error';
 
 /// Pagination
 const String tTextPageId = 'pageId';
+
+/// Search
+const String tTextSearchQuery = 'searchQuery';
