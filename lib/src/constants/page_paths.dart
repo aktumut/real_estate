@@ -7,6 +7,8 @@ class PagePaths {
 
   static const String houseDetailWithId = '/house-detail/:$tTextPageId';
 
+  static const String searchResult = '/search-result/:$tTextSearchQuery';
+
   static const String credentials = '/credentials';
 
   static const String notFound = '/not-found';
@@ -20,6 +22,8 @@ class PageNames {
   static const String houseDetail = 'houseDetailPage';
 
   static const String houseDetailWithId = 'house-detail_id';
+
+  static const String searchResult = 'searchResultPage';
 
   static const String credentials = 'credentialsPage';
 
