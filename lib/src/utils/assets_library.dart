@@ -5,8 +5,14 @@ import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/constants/asset_paths.dart';
 
 class IconLibrary {
-  static SvgPicture backIcon = SvgPicture.asset(
-    IconPaths.backIcon,
+  static ColorFiltered backIcon = ColorFiltered(
+    colorFilter: ColorFilter.mode(
+      AppColors.white,
+      BlendMode.srcIn,
+    ),
+    child: SvgPicture.asset(
+      IconPaths.backIcon,
+    ),
   );
 
   static ColorFiltered bathIcon = ColorFiltered(
