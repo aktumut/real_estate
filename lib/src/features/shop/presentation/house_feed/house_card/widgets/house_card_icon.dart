@@ -22,6 +22,7 @@ class HouseCardIcon extends StatelessWidget {
           count,
           style: context.textTheme.bodySmall,
         ),
+        gapW8,
       ],
     );
   }
