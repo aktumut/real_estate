@@ -27,7 +27,6 @@ class HouseDetailModalWidget extends StatelessWidget {
         child: SizedBox(
           height: context.screenHeight - Sizes.heightHouseDetailImageDiff,
           child: ListView(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             physics: const ClampingScrollPhysics(),
 
             children: [
