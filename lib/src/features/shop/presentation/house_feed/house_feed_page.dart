@@ -17,7 +17,7 @@ class HouseFeedPage extends ConsumerWidget {
       appBar: const CustomAppBar(),
       body: SafeArea(
         child: Padding(
-          padding: Paddings.scaffoldAll,
+          padding: Paddings.scaffoldHorizontal,
           child: AsyncValueWidget(
             value: houseFeedValue,
             data: (data) {
