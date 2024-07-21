@@ -30,6 +30,11 @@ class Sizes {
   /// Icon
   static const heightIcon = 24.0;
   static const widthIcon = 24.0;
+
+  /// House Detail
+  static const heightHouseDetailImage = 256.0;
+  static const heightHouseDetailImageDiff = 240.0;
+  
 }
 
 class Paddings {
