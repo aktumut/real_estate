@@ -95,5 +95,6 @@ class ImageLibrary {
 
   static Image searchStateEmpty = Image.asset(
     ImagePaths.searchStateEmpty,
+    fit: BoxFit.cover,
   );
 }
