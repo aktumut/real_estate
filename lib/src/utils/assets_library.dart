@@ -103,4 +103,9 @@ class ImageLibrary {
     ImagePaths.searchStateEmpty,
     fit: BoxFit.cover,
   );
+
+  static Image dTTBanner = Image.asset(
+    ImagePaths.dTTBanner,
+    fit: BoxFit.cover,
+  );
 }
