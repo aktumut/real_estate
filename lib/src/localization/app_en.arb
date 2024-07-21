@@ -6,7 +6,9 @@
   "retry": "Retry",
   "appBarTitle": "DTT REAL ESTATE",
   "searchForAHome": "Search for a home",
-  "searchNoResultFound": "No results found!\nPerhaps try anothe search"
+  "searchNoResultFound": "No results found!\nPerhaps try another search",
+  "houseDetailDescription": "Description",
+  "houseDetailLocation": "Location"
 }
 
 
