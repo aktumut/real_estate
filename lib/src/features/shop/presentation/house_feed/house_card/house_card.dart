@@ -3,9 +3,10 @@ import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/helpers/format_price.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/helpers/format_zip_code.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/widgets/house_card_icon_row.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/widgets/house_card_image.dart';
-import 'package:real_estate/src/utils/format_price.dart';
 
 class HouseCard extends StatelessWidget {
   const HouseCard({required this.house, super.key});
@@ -35,7 +36,7 @@ class HouseCard extends StatelessWidget {
                   style: context.textTheme.bodyLarge,
                 ),
                 Text(
-                  house.zip,
+                  '${formatZipCode(house.zip)} ${house.city}',
                   style: context.textTheme.bodySmall?.copyWith(
                     color: AppColors.medium,
                   ),
