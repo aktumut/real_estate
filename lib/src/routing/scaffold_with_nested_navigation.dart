@@ -29,7 +29,7 @@ class _ScaffoldWithNestedNavigationState
     if (index == 0) {
       ref.watch(goRouterProvider).goNamed(PageNames.houseFeed);
     } else if (index == 1) {
-      ref.watch(goRouterProvider).goNamed(PageNames.credentials);
+      ref.watch(goRouterProvider).goNamed(PageNames.about);
     }
   }
 
