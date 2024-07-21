@@ -3,8 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:real_estate/src/constants/keys.dart';
 import 'package:real_estate/src/constants/page_paths.dart';
 import 'package:real_estate/src/constants/strings.dart';
-import 'package:real_estate/src/features/credentials/presentation/credentials_page.dart';
-import 'package:real_estate/src/features/search/presentation/search_result_page.dart';
+import 'package:real_estate/src/features/about/presentation/about_page.dart';import 'package:real_estate/src/features/search/presentation/search_result_page.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
 import 'package:real_estate/src/features/shop/presentation/house_detail/house_detail_page.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/house_feed_page.dart';
@@ -70,10 +69,10 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             navigatorKey: Keys.credentialsPageKey,
             routes: [
               GoRoute(
-                path: PagePaths.credentials,
-                name: PageNames.credentials,
+                path: PagePaths.about,
+                name: PageNames.about,
                 pageBuilder: (context, state) => const NoTransitionPage(
-                  child: CredentialsPage(),
+                  child: AboutPage(),
                 ),
               ),
             ],
