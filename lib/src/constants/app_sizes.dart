@@ -17,6 +17,7 @@ class Sizes {
   static const p60 = 60.0;
   static const p64 = 64.0;
   static const p72 = 72.0;
+  static const p76 = 76.0;
   static const p80 = 80.0;
   static const p96 = 96.0;
   static const p108 = 108.0;
@@ -29,6 +30,11 @@ class Sizes {
   /// Icon
   static const heightIcon = 24.0;
   static const widthIcon = 24.0;
+
+  /// House Detail
+  static const heightHouseDetailImage = 256.0;
+  static const heightHouseDetailImageDiff = 240.0;
+  
 }
 
 class Paddings {

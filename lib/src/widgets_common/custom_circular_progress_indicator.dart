@@ -3,7 +3,9 @@ import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
 
 class CustomCircularProgressIndicator extends StatelessWidget {
-  const CustomCircularProgressIndicator({super.key});
+  const CustomCircularProgressIndicator({super.key, this.value});
+
+  final double? value;
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,7 @@ class CustomCircularProgressIndicator extends StatelessWidget {
       height: Sizes.p24,
       child: CircularProgressIndicator(
         color: context.theme.primaryColor,
+        value: value,
       ),
     );
   }

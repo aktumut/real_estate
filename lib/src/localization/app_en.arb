@@ -3,7 +3,13 @@
   "goHome": "Go Home",
   "pageNotFound": "Page Not Found",
   "anErrorOccurred": "An Error Occurred. Please try again later.",
-  "retry": "Retry"
+  "retry": "Retry",
+  "appBarTitle": "DTT REAL ESTATE",
+  "searchForAHome": "Search for a home",
+  "searchNoResultFound": "No results found!\nPerhaps try another search",
+  "houseDetailDescription": "Description",
+  "houseDetailLocation": "Location"
 }
+
 
 

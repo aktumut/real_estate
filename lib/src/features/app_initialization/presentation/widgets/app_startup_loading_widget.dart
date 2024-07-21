@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
-import 'package:real_estate/src/utilities/assets_library.dart';
+import 'package:real_estate/src/utils/assets_library.dart';
 
 class AppStartupLoadingWidget extends StatelessWidget {
   const AppStartupLoadingWidget({super.key});
