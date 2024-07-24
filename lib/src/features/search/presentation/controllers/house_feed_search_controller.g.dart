@@ -7,7 +7,7 @@ part of 'house_feed_search_controller.dart';
 // **************************************************************************
 
 String _$houseFeedSearchControllerHash() =>
-    r'19a169248ab81d2ece593b5070c3f5a9b8642e64';
+    r'2378a3e426c097e45c957e01c3ab16c2f9bfa874';
 
 /// Copied from Dart SDK
 class _SystemHash {

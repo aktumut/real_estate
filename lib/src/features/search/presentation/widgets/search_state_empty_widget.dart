@@ -22,9 +22,7 @@ class SearchStateEmptyWidget extends StatelessWidget {
           Text(
             context.loc.searchNoResultFound,
             textAlign: TextAlign.center,
-            style: context.textTheme.titleLarge?.copyWith(
-              color: AppColors.medium,
-            ),
+            style: context.textTheme.titleMedium,
           ),
         ],
       ),

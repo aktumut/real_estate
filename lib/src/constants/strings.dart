@@ -30,3 +30,6 @@ const String tTextPageId = 'pageId';
 
 /// Search
 const String tTextSearchQuery = 'searchQuery';
+
+/// App
+const String tTextWebSite = 'https://d-tt.nl';

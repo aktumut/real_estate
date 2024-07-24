@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/constants/page_paths.dart';
+import 'package:real_estate/src/extensions/theme_context_ext.dart';
 import 'package:real_estate/src/routing/app_router.dart';
 import 'package:real_estate/src/utils/assets_library.dart';
 
@@ -29,7 +29,7 @@ class _ScaffoldWithNestedNavigationState
     if (index == 0) {
       ref.watch(goRouterProvider).goNamed(PageNames.houseFeed);
     } else if (index == 1) {
-      ref.watch(goRouterProvider).goNamed(PageNames.credentials);
+      ref.watch(goRouterProvider).goNamed(PageNames.about);
     }
   }
 
@@ -45,8 +45,8 @@ class _ScaffoldWithNestedNavigationState
             icon: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 widget.navigationShell.currentIndex == 0
-                    ? AppColors.strong
-                    : AppColors.medium,
+                    ? context.theme.colorScheme.secondary
+                    : context.theme.colorScheme.primary,
                 BlendMode.srcIn,
               ),
               child: IconLibrary.homeIcon,
@@ -57,8 +57,8 @@ class _ScaffoldWithNestedNavigationState
             icon: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 widget.navigationShell.currentIndex == 1
-                    ? AppColors.strong
-                    : AppColors.medium,
+                    ? context.theme.colorScheme.secondary
+                    : context.theme.colorScheme.primary,
                 BlendMode.srcIn,
               ),
               child: IconLibrary.infoIcon,

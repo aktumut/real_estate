@@ -7,7 +7,7 @@ class PagePaths {
 
   static const String searchResult = '/search-result/:$tTextSearchQuery';
 
-  static const String credentials = '/credentials';
+  static const String about = '/about';
 
   static const String notFound = '/not-found';
 
@@ -21,7 +21,7 @@ class PageNames {
 
   static const String searchResult = 'searchResultPage';
 
-  static const String credentials = 'credentialsPage';
+  static const String about = 'aboutPage';
 
   static const String notFound = 'notFoundPage';
 
