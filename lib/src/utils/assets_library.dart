@@ -15,28 +15,16 @@ class IconLibrary {
     ),
   );
 
-  static ColorFiltered bathIcon = ColorFiltered(
-    colorFilter: ColorFilter.mode(
-      AppColors.medium,
-      BlendMode.srcIn,
-    ),
-    child: SvgPicture.asset(
-      IconPaths.bathIcon,
-      width: Sizes.p16,
-      height: Sizes.p16,
-    ),
+  static SvgPicture bathIcon = SvgPicture.asset(
+    IconPaths.bathIcon,
+    width: Sizes.p16,
+    height: Sizes.p16,
   );
 
-  static ColorFiltered bedIcon = ColorFiltered(
-    colorFilter: ColorFilter.mode(
-      AppColors.medium,
-      BlendMode.srcIn,
-    ),
-    child: SvgPicture.asset(
-      IconPaths.bedIcon,
-      width: Sizes.p16,
-      height: Sizes.p16,
-    ),
+  static SvgPicture bedIcon = SvgPicture.asset(
+    IconPaths.bedIcon,
+    width: Sizes.p16,
+    height: Sizes.p16,
   );
 
   static SvgPicture closeIcon = SvgPicture.asset(
@@ -55,38 +43,20 @@ class IconLibrary {
     IconPaths.infoIcon,
   );
 
-  static ColorFiltered layersIcon = ColorFiltered(
-    colorFilter: ColorFilter.mode(
-      AppColors.medium,
-      BlendMode.srcIn,
-    ),
-    child: SvgPicture.asset(
-      IconPaths.layersIcon,
-      width: Sizes.p16,
-      height: Sizes.p16,
-    ),
+  static SvgPicture layersIcon = SvgPicture.asset(
+    IconPaths.layersIcon,
+    width: Sizes.p16,
+    height: Sizes.p16,
   );
 
-  static ColorFiltered locationIcon = ColorFiltered(
-    colorFilter: ColorFilter.mode(
-      AppColors.medium,
-      BlendMode.srcIn,
-    ),
-    child: SvgPicture.asset(
-      IconPaths.locationIcon,
-      width: Sizes.p16,
-      height: Sizes.p16,
-    ),
+  static SvgPicture locationIcon = SvgPicture.asset(
+    IconPaths.locationIcon,
+    width: Sizes.p16,
+    height: Sizes.p16,
   );
 
-  static ColorFiltered searchIcon = ColorFiltered(
-    colorFilter: ColorFilter.mode(
-      AppColors.medium,
-      BlendMode.srcIn,
-    ),
-    child: SvgPicture.asset(
-      IconPaths.searchIcon,
-    ),
+  static SvgPicture searchIcon = SvgPicture.asset(
+    IconPaths.searchIcon,
   );
 
   static SvgPicture whatShotIcon = SvgPicture.asset(
