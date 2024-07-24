@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/extensions/app_localizations_context.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
@@ -16,7 +15,7 @@ class HouseDetailModalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 240,
+      top: Sizes.heightHouseDetailImageDiff,
       child: Container(
         width: context.screenWidth,
         padding: Paddings.scaffoldHorizontal,
@@ -28,14 +27,13 @@ class HouseDetailModalWidget extends StatelessWidget {
           height: context.screenHeight - Sizes.heightHouseDetailImageDiff,
           child: ListView(
             physics: const ClampingScrollPhysics(),
-
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     r'$' '${formatPrice(house.price)}',
-                    style: context.textTheme.bodyLarge,
+                    style: context.textTheme.headlineMedium,
                   ),
                   HouseCardIconRow(house: house),
                 ],
@@ -43,19 +41,17 @@ class HouseDetailModalWidget extends StatelessWidget {
               gapH32,
               Text(
                 context.loc.houseDetailDescription,
-                style: context.textTheme.bodyLarge,
+                style: context.textTheme.headlineMedium,
               ),
               gapH16,
               Text(
                 house.description,
-                style: context.textTheme.bodyMedium?.copyWith(
-                  color: AppColors.medium,
-                ),
+                style: context.textTheme.displayLarge,
               ),
               gapH16,
               Text(
                 context.loc.houseDetailLocation,
-                style: context.textTheme.bodyLarge,
+                style: context.textTheme.headlineMedium,
               ),
               gapH16,
               MapWidget(house: house),
