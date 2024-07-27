@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/extensions/app_localizations_context.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
