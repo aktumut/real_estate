@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:real_estate/src/constants/api_paths.dart';
 import 'package:real_estate/src/constants/strings.dart';
 import 'package:real_estate/src/exceptions/error_logger.dart';
+import 'package:real_estate/src/features/app_initialization/bootstrap/network_detector_notifier.dart';
 import 'package:real_estate/src/features/app_initialization/data/http_client.dart';
+import 'package:real_estate/src/features/shop/data/storage_shop_repository.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -30,6 +32,10 @@ class ShopRepository {
 
   Future<List<House>> fetchHouses() async {
     return runCatching<List<House>>(() async {
+      if (_ref.read(networkDetectorProvider) == NetworkStatus.off) {
+        return await _ref.read(getHousesFromStorageProvider.future);
+      }
+
       final response = await _httpClientProvider.request(
         url: ApiPaths.fetchHouses,
         method: tTextGet,
@@ -39,6 +45,8 @@ class ShopRepository {
         (jsonDecode(response.data.toString()) as List<dynamic>)
             .map((e) => House.fromMap(e as Map<String, dynamic>)),
       );
+
+      await _ref.read(saveHousesToStorageProvider(houseList).future);
 
       return houseList;
     });
