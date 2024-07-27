@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
-import 'package:real_estate/src/features/app_initialization/data/isar_provider.dart';
+import 'package:real_estate/src/features/app_initialization/data/isar_house_provider.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
 import 'package:real_estate/src/features/shop/domain/house_storage_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -12,7 +12,7 @@ class StorageShopRepository {
 
   final Ref _ref;
 
-  Isar get _isar => _ref.read(isarProvider).requireValue;
+  Isar get _isar => _ref.read(isarHouseProvider).requireValue;
 
   Future<void> saveHousesToStorage(List<House> houses) async {
     await _isar.writeTxn(() async {
