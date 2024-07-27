@@ -11,4 +11,7 @@ class Keys {
 
   static GlobalKey<NavigatorState> credentialsPageKey =
       GlobalKey<NavigatorState>(debugLabel: 'credentials_page');
+
+  static GlobalKey<NavigatorState> wishListPageKey =
+      GlobalKey<NavigatorState>(debugLabel: 'wishlist_page');
 }
