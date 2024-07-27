@@ -18,6 +18,7 @@ class AppTheme {
       secondary: AppColors.strong,
       surface: AppColors.white,
       onSurface: AppColors.darkGray,
+      onSecondary: AppColors.white,
     ),
     appBarTheme: AppBarTheme(
       color: AppColors.lightGray,
@@ -71,6 +72,7 @@ class AppTheme {
       secondary: AppColors.white,
       surface: AppColors.darkThemeGray,
       onSurface: AppColors.darkThemeBackground,
+      onSecondary: AppColors.white,
     ),
     appBarTheme: AppBarTheme(
       color: AppColors.darkThemeBackground,
