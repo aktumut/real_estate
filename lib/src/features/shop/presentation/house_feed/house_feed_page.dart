@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/controllers/house_feed_controller.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/house_card.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/widgets/house_card.dart';
 import 'package:real_estate/src/widgets_common/async_value_widget.dart';
 import 'package:real_estate/src/widgets_common/custom_app_bar.dart';
 

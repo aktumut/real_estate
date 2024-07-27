@@ -4,8 +4,8 @@ import 'package:real_estate/src/extensions/app_localizations_context.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
 import 'package:real_estate/src/features/shop/presentation/house_detail/widgets/map_widget.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/helpers/format_price.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/widgets/house_card_icon_row.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/helpers/format_price.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/widgets/house_card_icon_row.dart';
 
 class HouseDetailModalWidget extends StatelessWidget {
   const HouseDetailModalWidget({required this.house, super.key});

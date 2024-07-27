@@ -4,7 +4,7 @@ import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
 import 'package:real_estate/src/features/search/presentation/controllers/house_feed_search_controller.dart';
 import 'package:real_estate/src/features/search/presentation/widgets/search_state_empty_widget.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/house_card.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/widgets/house_card.dart';
 import 'package:real_estate/src/widgets_common/async_value_widget.dart';
 
 class SearchResultWidget extends ConsumerStatefulWidget {
