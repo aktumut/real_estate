@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_startup.dart';
+part of 'isar_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appStartupHash() => r'f2f0556c48bafe3dcd96fb9228baf6aba2f09269';
+String _$isarHash() => r'd6d911717eca54bb1eb92fa850bf385e9eed4c3d';
 
-/// See also [appStartup].
-@ProviderFor(appStartup)
-final appStartupProvider = FutureProvider<void>.internal(
-  appStartup,
-  name: r'appStartupProvider',
+/// See also [isar].
+@ProviderFor(isar)
+final isarProvider = FutureProvider<Isar>.internal(
+  isar,
+  name: r'isarProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$appStartupHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$isarHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef AppStartupRef = FutureProviderRef<void>;
+typedef IsarRef = FutureProviderRef<Isar>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
