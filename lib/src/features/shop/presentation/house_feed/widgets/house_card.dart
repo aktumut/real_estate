@@ -5,10 +5,11 @@ import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/constants/page_paths.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/helpers/format_price.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/helpers/format_zip_code.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/widgets/house_card_icon_row.dart';
-import 'package:real_estate/src/features/shop/presentation/house_feed/house_card/widgets/house_card_image.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/helpers/format_price.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/helpers/format_zip_code.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/widgets/house_card_icon_row.dart';
+import 'package:real_estate/src/features/shop/presentation/house_feed/widgets/house_card_image.dart';
+import 'package:real_estate/src/features/wish_list/presentation/widgets/is_liked_widget.dart';
 
 class HouseCard extends ConsumerWidget {
   const HouseCard({required this.house, super.key});
@@ -35,9 +36,15 @@ class HouseCard extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    r'$' '${formatPrice(house.price)}',
-                    style: context.textTheme.headlineMedium,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        r'$' '${formatPrice(house.price)}',
+                        style: context.textTheme.headlineMedium,
+                      ),
+                      IsLikedWidget(house: house),
+                    ],
                   ),
                   Text(
                     '${formatZipCode(house.zip)} ${house.city}',

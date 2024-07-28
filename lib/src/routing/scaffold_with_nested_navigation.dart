@@ -30,6 +30,8 @@ class _ScaffoldWithNestedNavigationState
       ref.watch(goRouterProvider).goNamed(PageNames.houseFeed);
     } else if (index == 1) {
       ref.watch(goRouterProvider).goNamed(PageNames.about);
+    } else if (index == 2) {
+      ref.watch(goRouterProvider).goNamed(PageNames.wishList);
     }
   }
 
@@ -62,6 +64,18 @@ class _ScaffoldWithNestedNavigationState
                 BlendMode.srcIn,
               ),
               child: IconLibrary.infoIcon,
+            ),
+          ),
+          NavigationDestination(
+            label: '',
+            icon: ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                widget.navigationShell.currentIndex == 2
+                    ? context.theme.colorScheme.secondary
+                    : context.theme.colorScheme.primary,
+                BlendMode.srcIn,
+              ),
+              child: IconLibrary.whatShotIcon,
             ),
           ),
         ],

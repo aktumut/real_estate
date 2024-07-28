@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
-import 'package:real_estate/src/features/app_initialization/data/isar_provider.dart';
+import 'package:real_estate/src/features/app_initialization/data/isar_house_provider.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
 import 'package:real_estate/src/features/shop/domain/house_storage_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -12,29 +12,34 @@ class StorageShopRepository {
 
   final Ref _ref;
 
-  Isar get _isar => _ref.read(isarProvider).requireValue;
+  Isar get _isar => _ref.read(isarHouseProvider).requireValue;
 
   Future<void> saveHousesToStorage(List<House> houses) async {
     await _isar.writeTxn(() async {
       for (final house in houses) {
-        final newHouse = HouseStorage()
-          ..id = house.id
-          ..image = house.image
-          ..price = house.price
-          ..bedrooms = house.bedrooms
-          ..bathrooms = house.bathrooms
-          ..size = house.size
-          ..description = house.description
-          ..zip = house.zip
-          ..city = house.city
-          ..latitude = house.latitude
-          ..createdDate = house.createdDate
-          ..longitude = house.longitude;
+        final existingHouse = await _isar.houseStorages.get(house.id);
+        if (existingHouse == null) {
+          final newHouse = HouseStorage()
+            ..id = house.id
+            ..image = house.image
+            ..price = house.price
+            ..bedrooms = house.bedrooms
+            ..bathrooms = house.bathrooms
+            ..size = house.size
+            ..description = house.description
+            ..zip = house.zip
+            ..city = house.city
+            ..latitude = house.latitude
+            ..createdDate = house.createdDate
+            ..longitude = house.longitude
+            ..isLiked = false;
 
-        await _isar.houseStorages.put(newHouse);
+          await _isar.houseStorages.put(newHouse);
+        }
       }
     });
   }
+
 
   Future<List<House>> getHousesFromStorage() async {
     final houseStorages = await _isar.houseStorages.where().findAll();

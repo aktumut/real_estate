@@ -42,33 +42,38 @@ const HouseStorageSchema = CollectionSchema(
       name: r'description',
       type: IsarType.string,
     ),
-    r'latitude': PropertySchema(
+    r'image': PropertySchema(
       id: 5,
+      name: r'image',
+      type: IsarType.string,
+    ),
+    r'isLiked': PropertySchema(
+      id: 6,
+      name: r'isLiked',
+      type: IsarType.bool,
+    ),
+    r'latitude': PropertySchema(
+      id: 7,
       name: r'latitude',
       type: IsarType.long,
     ),
     r'longitude': PropertySchema(
-      id: 6,
+      id: 8,
       name: r'longitude',
       type: IsarType.long,
     ),
-    r'name': PropertySchema(
-      id: 7,
-      name: r'name',
-      type: IsarType.string,
-    ),
     r'price': PropertySchema(
-      id: 8,
+      id: 9,
       name: r'price',
       type: IsarType.long,
     ),
     r'size': PropertySchema(
-      id: 9,
+      id: 10,
       name: r'size',
       type: IsarType.long,
     ),
     r'zip': PropertySchema(
-      id: 10,
+      id: 11,
       name: r'zip',
       type: IsarType.string,
     )
@@ -112,12 +117,13 @@ void _houseStorageSerialize(
   writer.writeString(offsets[2], object.city);
   writer.writeString(offsets[3], object.createdDate);
   writer.writeString(offsets[4], object.description);
-  writer.writeLong(offsets[5], object.latitude);
-  writer.writeLong(offsets[6], object.longitude);
-  writer.writeString(offsets[7], object.image);
-  writer.writeLong(offsets[8], object.price);
-  writer.writeLong(offsets[9], object.size);
-  writer.writeString(offsets[10], object.zip);
+  writer.writeString(offsets[5], object.image);
+  writer.writeBool(offsets[6], object.isLiked);
+  writer.writeLong(offsets[7], object.latitude);
+  writer.writeLong(offsets[8], object.longitude);
+  writer.writeLong(offsets[9], object.price);
+  writer.writeLong(offsets[10], object.size);
+  writer.writeString(offsets[11], object.zip);
 }
 
 HouseStorage _houseStorageDeserialize(
@@ -133,12 +139,13 @@ HouseStorage _houseStorageDeserialize(
   object.createdDate = reader.readString(offsets[3]);
   object.description = reader.readString(offsets[4]);
   object.id = id;
-  object.latitude = reader.readLong(offsets[5]);
-  object.longitude = reader.readLong(offsets[6]);
-  object.image = reader.readString(offsets[7]);
-  object.price = reader.readLong(offsets[8]);
-  object.size = reader.readLong(offsets[9]);
-  object.zip = reader.readString(offsets[10]);
+  object.image = reader.readString(offsets[5]);
+  object.isLiked = reader.readBool(offsets[6]);
+  object.latitude = reader.readLong(offsets[7]);
+  object.longitude = reader.readLong(offsets[8]);
+  object.price = reader.readLong(offsets[9]);
+  object.size = reader.readLong(offsets[10]);
+  object.zip = reader.readString(offsets[11]);
   return object;
 }
 
@@ -160,16 +167,18 @@ P _houseStorageDeserializeProp<P>(
     case 4:
       return (reader.readString(offset)) as P;
     case 5:
-      return (reader.readLong(offset)) as P;
-    case 6:
-      return (reader.readLong(offset)) as P;
-    case 7:
       return (reader.readString(offset)) as P;
+    case 6:
+      return (reader.readBool(offset)) as P;
+    case 7:
+      return (reader.readLong(offset)) as P;
     case 8:
       return (reader.readLong(offset)) as P;
     case 9:
       return (reader.readLong(offset)) as P;
     case 10:
+      return (reader.readLong(offset)) as P;
+    case 11:
       return (reader.readString(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -841,6 +850,150 @@ extension HouseStorageQueryFilter
     });
   }
 
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'image',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
+      imageGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'image',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'image',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'image',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
+      imageStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'image',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'image',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageContains(
+      String value,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'image',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'image',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
+      imageIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'image',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
+      imageIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'image',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
+      isLikedEqualTo(bool value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'isLiked',
+        value: value,
+      ));
+    });
+  }
+
   QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
       latitudeEqualTo(int value) {
     return QueryBuilder.apply(this, (query) {
@@ -949,140 +1102,6 @@ extension HouseStorageQueryFilter
         includeLower: includeLower,
         upper: upper,
         includeUpper: includeUpper,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageEqualTo(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'name',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
-      imageGreaterThan(
-    String value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        include: include,
-        property: r'name',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageLessThan(
-    String value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.lessThan(
-        include: include,
-        property: r'name',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageBetween(
-    String lower,
-    String upper, {
-    bool includeLower = true,
-    bool includeUpper = true,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.between(
-        property: r'name',
-        lower: lower,
-        includeLower: includeLower,
-        upper: upper,
-        includeUpper: includeUpper,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
-      imageStartsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.startsWith(
-        property: r'name',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageEndsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.endsWith(
-        property: r'name',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageContains(
-      String value,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.contains(
-        property: r'name',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition> imageMatches(
-      String pattern,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.matches(
-        property: r'name',
-        wildcard: pattern,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
-      imageIsEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'name',
-        value: '',
-      ));
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterFilterCondition>
-      imageIsNotEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        property: r'name',
-        value: '',
       ));
     });
   }
@@ -1398,6 +1417,30 @@ extension HouseStorageQuerySortBy
     });
   }
 
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByImage() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'image', Sort.asc);
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByImageDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'image', Sort.desc);
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByIsLiked() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'isLiked', Sort.asc);
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByIsLikedDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'isLiked', Sort.desc);
+    });
+  }
+
   QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByLatitude() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'latitude', Sort.asc);
@@ -1419,18 +1462,6 @@ extension HouseStorageQuerySortBy
   QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByLongitudeDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'longitude', Sort.desc);
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByImage() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'name', Sort.asc);
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> sortByImageDesc() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'name', Sort.desc);
     });
   }
 
@@ -1547,6 +1578,30 @@ extension HouseStorageQuerySortThenBy
     });
   }
 
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByImage() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'image', Sort.asc);
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByImageDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'image', Sort.desc);
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByIsLiked() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'isLiked', Sort.asc);
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByIsLikedDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'isLiked', Sort.desc);
+    });
+  }
+
   QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByLatitude() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'latitude', Sort.asc);
@@ -1568,18 +1623,6 @@ extension HouseStorageQuerySortThenBy
   QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByLongitudeDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'longitude', Sort.desc);
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByImage() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'name', Sort.asc);
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QAfterSortBy> thenByImageDesc() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addSortBy(r'name', Sort.desc);
     });
   }
 
@@ -1655,6 +1698,19 @@ extension HouseStorageQueryWhereDistinct
     });
   }
 
+  QueryBuilder<HouseStorage, HouseStorage, QDistinct> distinctByImage(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'image', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<HouseStorage, HouseStorage, QDistinct> distinctByIsLiked() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'isLiked');
+    });
+  }
+
   QueryBuilder<HouseStorage, HouseStorage, QDistinct> distinctByLatitude() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'latitude');
@@ -1664,13 +1720,6 @@ extension HouseStorageQueryWhereDistinct
   QueryBuilder<HouseStorage, HouseStorage, QDistinct> distinctByLongitude() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'longitude');
-    });
-  }
-
-  QueryBuilder<HouseStorage, HouseStorage, QDistinct> distinctByImage(
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addDistinctBy(r'name', caseSensitive: caseSensitive);
     });
   }
 
@@ -1732,6 +1781,18 @@ extension HouseStorageQueryProperty
     });
   }
 
+  QueryBuilder<HouseStorage, String, QQueryOperations> imageProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'image');
+    });
+  }
+
+  QueryBuilder<HouseStorage, bool, QQueryOperations> isLikedProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'isLiked');
+    });
+  }
+
   QueryBuilder<HouseStorage, int, QQueryOperations> latitudeProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'latitude');
@@ -1741,12 +1802,6 @@ extension HouseStorageQueryProperty
   QueryBuilder<HouseStorage, int, QQueryOperations> longitudeProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'longitude');
-    });
-  }
-
-  QueryBuilder<HouseStorage, String, QQueryOperations> imageProperty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'name');
     });
   }
 

@@ -14,7 +14,10 @@
   "aboutPageDesignAndDevelopment": "Design and Development",
   "aboutByCompany": "by DTT",
   "aboutCompanyShortWebSite": "d-tt.nl",
-  "noInternetMap": "Connect to internet for map"
+  "noInternetMap": "Connect to internet for map",
+  "wishListAppBar": "WISH LIST",
+  "wishListEmpty": "Your wish list is empty",
+  "noWishList": "You don't have anything in your wish list yet."
 }
 
 
