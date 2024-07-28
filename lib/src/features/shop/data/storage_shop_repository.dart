@@ -17,24 +17,29 @@ class StorageShopRepository {
   Future<void> saveHousesToStorage(List<House> houses) async {
     await _isar.writeTxn(() async {
       for (final house in houses) {
-        final newHouse = HouseStorage()
-          ..id = house.id
-          ..image = house.image
-          ..price = house.price
-          ..bedrooms = house.bedrooms
-          ..bathrooms = house.bathrooms
-          ..size = house.size
-          ..description = house.description
-          ..zip = house.zip
-          ..city = house.city
-          ..latitude = house.latitude
-          ..createdDate = house.createdDate
-          ..longitude = house.longitude;
+        final existingHouse = await _isar.houseStorages.get(house.id);
+        if (existingHouse == null) {
+          final newHouse = HouseStorage()
+            ..id = house.id
+            ..image = house.image
+            ..price = house.price
+            ..bedrooms = house.bedrooms
+            ..bathrooms = house.bathrooms
+            ..size = house.size
+            ..description = house.description
+            ..zip = house.zip
+            ..city = house.city
+            ..latitude = house.latitude
+            ..createdDate = house.createdDate
+            ..longitude = house.longitude
+            ..isLiked = false;
 
-        await _isar.houseStorages.put(newHouse);
+          await _isar.houseStorages.put(newHouse);
+        }
       }
     });
   }
+
 
   Future<List<House>> getHousesFromStorage() async {
     final houseStorages = await _isar.houseStorages.where().findAll();
