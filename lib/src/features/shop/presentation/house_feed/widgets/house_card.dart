@@ -3,19 +3,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate/src/constants/app_sizes.dart';
 import 'package:real_estate/src/constants/page_paths.dart';
-import 'package:real_estate/src/constants/strings.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
 import 'package:real_estate/src/features/shop/domain/house_model.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/helpers/format_price.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/helpers/format_zip_code.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/widgets/house_card_icon_row.dart';
 import 'package:real_estate/src/features/shop/presentation/house_feed/widgets/house_card_image.dart';
+import 'package:real_estate/src/features/wish_list/presentation/widgets/is_liked_widget.dart';
 
 class HouseCard extends ConsumerWidget {
-  const HouseCard({required this.house, this.isLiked = tTextFalse, super.key});
+  const HouseCard({required this.house, super.key});
 
   final House house;
-  final String isLiked;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -44,12 +43,7 @@ class HouseCard extends ConsumerWidget {
                         r'$' '${formatPrice(house.price)}',
                         style: context.textTheme.headlineMedium,
                       ),
-                      Icon(
-                        isLiked == tTextTrue
-                            ? Icons.favorite_sharp
-                            : Icons.favorite_border_sharp,
-                        color: context.theme.colorScheme.secondary,
-                      ),
+                      IsLikedWidget(house: house),
                     ],
                   ),
                   Text(
