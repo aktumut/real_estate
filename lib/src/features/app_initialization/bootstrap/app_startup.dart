@@ -34,10 +34,7 @@ final loginPositionProvider = StateProvider<Position?>((ref) => null);
 @Riverpod(keepAlive: true)
 Future<void> appStartup(AppStartupRef ref) async {
   ref.onDispose(() {
-    ref
-      ..invalidate(networkDetectorProvider)
-      ..invalidate(errorLoggerProvider)
-      ..invalidate(loginPositionProvider);
+    ref.invalidate(errorLoggerProvider);
   });
 
   // *  turn off the # in the URLs on the web
