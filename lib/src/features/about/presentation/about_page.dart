@@ -38,12 +38,11 @@ class _AboutPageState extends ConsumerState<AboutPage> {
             ),
           ),
           gapH16,
-          Container(
+          Padding(
             padding: const EdgeInsets.symmetric(
               vertical: Sizes.p16,
               horizontal: Sizes.p20,
             ),
-            color: context.theme.colorScheme.onSecondaryContainer,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,7 +56,9 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                   children: [
                     SizedBox(
                       width: context.screenWidth * 0.4,
-                      child: ImageLibrary.dTTBanner,
+                      child: isDarkMode
+                          ? ImageLibrary.dTTBannerDarkMode
+                          : ImageLibrary.dTTBanner,
                     ),
                     gapW16,
                     _buildLinkText(context),

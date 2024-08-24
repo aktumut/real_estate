@@ -78,4 +78,9 @@ class ImageLibrary {
     ImagePaths.dTTBanner,
     fit: BoxFit.cover,
   );
+
+  static Image dTTBannerDarkMode = Image.asset(
+    ImagePaths.dTTBannerDarkMode,
+    fit: BoxFit.cover,
+  );
 }
