@@ -48,8 +48,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
               children: [
                 Text(
                   context.loc.aboutPageDesignAndDevelopment,
-                  style: context.textTheme.headlineMedium
-                      ?.copyWith(color: AppColors.strong),
+                  style: context.textTheme.headlineMedium,
                 ),
                 gapH16,
                 Row(
