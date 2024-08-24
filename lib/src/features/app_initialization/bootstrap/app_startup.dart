@@ -13,15 +13,34 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_startup.g.dart';
 
+// *  This file contains the appStartup provider, which is responsible for
+// *  initializing the application.
+// *
+// *  The appStartup provider is asynchronous provider that performs the
+// *  following tasks:
+// *
+// *  - Disables the # in URLs on the web.
+// *  - Sets the preferred device orientation to portrait.
+// *  - Gets the user's current location.
+// *  - Initializes the Isar database.
+// *  - Starts listening for network connectivity changes.
+// *  - Registers error handlers.
+// *
+// *  The appStartup provider is kept alive for the lifetime of the application,
+// *  and it invalidates providers when it is disposed.
+
 final loginPositionProvider = StateProvider<Position?>((ref) => null);
 
 @Riverpod(keepAlive: true)
 Future<void> appStartup(AppStartupRef ref) async {
   ref.onDispose(() {
-    ref.invalidate(errorLoggerProvider);
+    ref
+      ..invalidate(networkDetectorProvider)
+      ..invalidate(errorLoggerProvider)
+      ..invalidate(loginPositionProvider);
   });
 
-  // turn off the # in the URLs on the web
+  // *  turn off the # in the URLs on the web
   usePathUrlStrategy();
 
   await SystemChrome.setPreferredOrientations([
