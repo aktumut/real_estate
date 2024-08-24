@@ -40,14 +40,14 @@ class HouseCard extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        r'$' '${formatPrice(house.price)}',
+                        r'$' '${house.price.formatPrice()}',
                         style: context.textTheme.headlineMedium,
                       ),
                       IsLikedWidget(house: house),
                     ],
                   ),
                   Text(
-                    '${formatZipCode(house.zip)} ${house.city}',
+                    '${house.zip.formatZipCode()} ${house.city}',
                     style: context.textTheme.bodySmall,
                   ),
                   const Spacer(),

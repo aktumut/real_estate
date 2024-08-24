@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:real_estate/src/constants/keys.dart';
 import 'package:real_estate/src/constants/page_paths.dart';
@@ -43,10 +44,15 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                     pageBuilder: (context, state) {
                       final house = state.extra! as House;
 
-                      return NoTransitionPage(
-                        child: HouseDetailPage(
-                          house: house,
-                        ),
+                      return CustomTransitionPage(
+                        child: HouseDetailPage(house: house),
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          return ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          );
+                        },
                       );
                     },
                   ),

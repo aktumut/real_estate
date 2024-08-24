@@ -4,6 +4,14 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'house_feed_search_controller.g.dart';
 
+// * This class is a Riverpod provider that controls the search functionality
+// *
+// * This class takes a search queries a parameter and returns a list of houses
+// *  that match the query.
+// *
+// * The search is performed by filtering the list of houses based on the city
+// * and postal code.
+
 @riverpod
 class HouseFeedSearchController extends _$HouseFeedSearchController {
   @override

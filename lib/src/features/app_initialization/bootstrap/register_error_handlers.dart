@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:real_estate/src/constants/app_colors.dart';
 import 'package:real_estate/src/exceptions/error_logger.dart';
 
+// * Handle errors from Flutter framework
+
 void registerErrorHandlers(ErrorLogger errorLogger) {
-  // * Handle errors from Flutter framework
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
 

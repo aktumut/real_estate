@@ -5,6 +5,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_interceptor.g.dart';
 
+// * This file defines the AppInterceptor, which is a Dio interceptor that adds
+// * an access key header to all requests.
+
 class AppInterceptor extends QueuedInterceptor {
   AppInterceptor({required this.ref});
 

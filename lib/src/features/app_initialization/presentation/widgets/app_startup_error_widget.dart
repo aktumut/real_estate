@@ -5,6 +5,8 @@ import 'package:real_estate/src/extensions/app_localizations_context.dart';
 import 'package:real_estate/src/extensions/theme_context_ext.dart';
 import 'package:real_estate/src/widgets_common/primary_button.dart';
 
+// * In case of an error during app startup, this widget is displayed.
+
 class AppStartupErrorWidget extends StatelessWidget {
   const AppStartupErrorWidget({
     required this.message,

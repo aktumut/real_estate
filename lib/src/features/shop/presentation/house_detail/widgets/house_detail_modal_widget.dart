@@ -32,7 +32,7 @@ class HouseDetailModalWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    r'$' '${formatPrice(house.price)}',
+                    r'$' '${house.price.formatPrice()}',
                     style: context.textTheme.headlineMedium,
                   ),
                   HouseCardIconRow(house: house),

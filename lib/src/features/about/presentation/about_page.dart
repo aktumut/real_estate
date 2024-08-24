@@ -38,26 +38,26 @@ class _AboutPageState extends ConsumerState<AboutPage> {
             ),
           ),
           gapH16,
-          Container(
+          Padding(
             padding: const EdgeInsets.symmetric(
               vertical: Sizes.p16,
               horizontal: Sizes.p20,
             ),
-            color: context.theme.colorScheme.onSecondaryContainer,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   context.loc.aboutPageDesignAndDevelopment,
-                  style: context.textTheme.headlineMedium
-                      ?.copyWith(color: AppColors.strong),
+                  style: context.textTheme.headlineMedium,
                 ),
                 gapH16,
                 Row(
                   children: [
                     SizedBox(
                       width: context.screenWidth * 0.4,
-                      child: ImageLibrary.dTTBanner,
+                      child: isDarkMode
+                          ? ImageLibrary.dTTBannerDarkMode
+                          : ImageLibrary.dTTBanner,
                     ),
                     gapW16,
                     _buildLinkText(context),
@@ -87,8 +87,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
       children: [
         Text(
           context.loc.aboutByCompany,
-          style:
-              context.textTheme.bodyMedium?.copyWith(color: AppColors.strong),
+          style: context.textTheme.bodyMedium,
         ),
         InkWell(
           child: Text(

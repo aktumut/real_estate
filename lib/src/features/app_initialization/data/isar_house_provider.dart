@@ -5,6 +5,10 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'isar_house_provider.g.dart';
 
+// * This file defines the IsarHouse provider, which is a Riverpod provider that
+// * provides an instance of the Isar database.
+// * The Isar database is used to store house data locally on the device.
+
 @Riverpod(keepAlive: true)
 Future<Isar> isarHouse(IsarHouseRef ref) async {
   final dir = await getApplicationDocumentsDirectory();

@@ -4,6 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:real_estate/src/widgets_common/custom_circular_progress_indicator.dart';
 import 'package:real_estate/src/widgets_common/error_message_widget.dart';
 
+// * This is a common widget that used for async value
+// * handling together with controllers.
+
 class AsyncValueWidget<T> extends StatelessWidget {
   const AsyncValueWidget({
     required this.value,

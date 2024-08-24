@@ -38,7 +38,7 @@ class HouseCardIconRow extends ConsumerWidget {
             ),
             HouseCardIcon(
               icon: IconLibrary.locationIcon,
-              count: '${formatKm(data)} km',
+              count: '${data.formatKm()} km',
             ),
             SizedBox(
               width: context.screenWidth * 0.05,

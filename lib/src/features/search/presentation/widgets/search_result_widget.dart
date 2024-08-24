@@ -22,7 +22,7 @@ class _SearchResultWidgetState extends ConsumerState<SearchResultWidget> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 1500), () {
       setState(() {
         startAnimation = true;
       });

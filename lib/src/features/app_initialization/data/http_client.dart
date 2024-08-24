@@ -8,6 +8,10 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'http_client.g.dart';
 
+// * This file defines the HttpClient, which is a wrapper around the Dio.
+// *
+// * The HttpClient provides a simple interface for making HTTP requests.
+
 class HttpClient {
   HttpClient(this.ref) : _dio = ref.read(dioProvider);
 

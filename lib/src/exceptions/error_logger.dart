@@ -4,7 +4,10 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'error_logger.g.dart';
 
-// I would like to log errors to Firebase Crashlytics
+// * This file defines the error logger that is used through the app
+// *
+// * I would like to log errors to Firebase Crashlytics if the app is in
+// * production mode.
 
 class ErrorLogger {
   ErrorLogger(// this._firebaseCrashlytics,

@@ -8,7 +8,7 @@ class SearchBarAnimationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
       tween: Tween<double>(begin: 40, end: 16),
       builder: (BuildContext context, double value, Widget? child) {
         return SizedBox(height: value);

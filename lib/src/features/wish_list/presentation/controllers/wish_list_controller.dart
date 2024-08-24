@@ -5,6 +5,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'wish_list_controller.g.dart';
 
+// * This file defines the WishListController, which returns a list of houses
+// * that are in the wishlist.
+
 @riverpod
 class WishListController extends _$WishListController {
   @override
