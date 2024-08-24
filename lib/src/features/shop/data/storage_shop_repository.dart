@@ -7,6 +7,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'storage_shop_repository.g.dart';
 
+// * This file defines the StorageShopRepository, which is responsible for
+// * storing and retrieving house data from local storage using Isar.
+
 class StorageShopRepository {
   StorageShopRepository(this._ref);
 
@@ -39,7 +42,6 @@ class StorageShopRepository {
       }
     });
   }
-
 
   Future<List<House>> getHousesFromStorage() async {
     final houseStorages = await _isar.houseStorages.where().findAll();

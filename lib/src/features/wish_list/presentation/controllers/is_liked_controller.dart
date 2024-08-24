@@ -5,6 +5,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'is_liked_controller.g.dart';
 
+// * This file defines the IsLikedController, which is a Riverpod provider that
+// * determines if a house is liked.
+
 @riverpod
 class IsLikedController extends _$IsLikedController {
   @override

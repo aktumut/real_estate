@@ -6,6 +6,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'dio_provider.g.dart';
 
+// * This file defines the dio provider, which is a Riverpod provider that
+// * provides an instance of the Dio HTTP client.
+
 @Riverpod(keepAlive: true)
 Dio dio(DioRef ref) {
   return Dio(

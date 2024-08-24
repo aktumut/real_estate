@@ -12,6 +12,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'shop_repository.g.dart';
 
+// * This file defines the ShopRepository, which is responsible for fetching
+// * house data from the network or local storage.
+
 class ShopRepository {
   ShopRepository(this._ref);
 

@@ -7,6 +7,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'wish_list_storage_repository.g.dart';
 
+// * This file defines the WishListStorageRepository, which is responsible for
+// * managing the wishlist data in local storage using Isar.
+
 class WishListStorageRepository {
   WishListStorageRepository(this._ref);
 

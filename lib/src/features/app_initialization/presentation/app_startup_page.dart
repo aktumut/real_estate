@@ -4,6 +4,12 @@ import 'package:real_estate/src/features/app_initialization/bootstrap/app_startu
 import 'package:real_estate/src/features/app_initialization/presentation/widgets/app_startup_error_widget.dart';
 import 'package:real_estate/src/features/app_initialization/presentation/widgets/app_startup_loading_widget.dart';
 
+// * This widget is responsible for displaying a loading screen while the
+// * application initializes.
+// *
+// * It uses the appStartupProvider to check the status of the application
+// * initialization process.
+
 class AppStartupPage extends ConsumerWidget {
   const AppStartupPage({
     required this.onLoaded,

@@ -1,6 +1,12 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// *  This file defines the NetworkDetectorNotifier, which is a StateNotifier
+// *  that provides information about the device's network connectivity status.
+// *
+// *  The NetworkDetectorNotifier listens for changes in network connectivity
+// *  and updates its state accordingly.
+
 enum NetworkStatus { notDetermined, on, off }
 
 class NetworkDetectorNotifier extends StateNotifier<NetworkStatus> {
