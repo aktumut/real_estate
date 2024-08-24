@@ -6,7 +6,7 @@ part of 'is_liked_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$isLikedControllerHash() => r'308aa2e1efdc4d3da34d70ee98818127d5dd2d86';
+String _$isLikedControllerHash() => r'694745e617207624e3545325cc5a66322acba027';
 
 /// Copied from Dart SDK
 class _SystemHash {
