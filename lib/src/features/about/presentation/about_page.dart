@@ -88,8 +88,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
       children: [
         Text(
           context.loc.aboutByCompany,
-          style:
-              context.textTheme.bodyMedium?.copyWith(color: AppColors.strong),
+          style: context.textTheme.bodyMedium,
         ),
         InkWell(
           child: Text(
