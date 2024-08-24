@@ -1,3 +1,5 @@
-String formatZipCode(String zipCode) {
-  return zipCode.replaceAll(' ', '');
+extension StringExtensions on String {
+  String formatZipCode() {
+    return replaceAll(' ', '');
+  }
 }
