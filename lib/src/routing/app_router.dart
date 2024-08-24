@@ -54,12 +54,6 @@ final goRouterProvider = Provider<GoRouter>((ref) {
                           );
                         },
                       );
-
-                      // return NoTransitionPage(
-                      //   child: HouseDetailPage(
-                      //     house: house,
-                      //   ),
-                      // );
                     },
                   ),
                 ],
